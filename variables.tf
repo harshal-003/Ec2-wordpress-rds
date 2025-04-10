@@ -14,6 +14,7 @@ variable "dbstorage" {
   type        = number
   default     = 20  
 }
+<<<<<<< HEAD
 variable "db_username" {
   description = "Database username"
   type        = string
@@ -25,3 +26,5 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+=======
+>>>>>>> 2b7c8b0 (update this files)

@@ -53,8 +53,13 @@ resource "aws_db_instance" "myrds" {
   engine              = "mysql"
   engine_version      = "8.0.40"
   instance_class      = "db.t3.micro"
+<<<<<<< HEAD
   username            = var.db_username
   password            = var.db_password
+=======
+  username            = "harshal"
+  password            = "harshal1234"
+>>>>>>> 2b7c8b0 (update this files)
   publicly_accessible = false
   skip_final_snapshot = true
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
@@ -120,7 +125,11 @@ resource "aws_security_group" "rds_sg" {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
+<<<<<<< HEAD
     security_groups = [aws_security_group.TF_SG.id]  
+=======
+    security_groups = [aws_security_group.TF_SG.id]  # Allow access from EC2 Security Group
+>>>>>>> 2b7c8b0 (update this files)
   }
 
   egress {
