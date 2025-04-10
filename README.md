@@ -3,20 +3,23 @@
 ## 📄 Overview
 This project automates the deployment of a WordPress site on an AWS EC2 instance with an RDS MySQL database. The stack includes:
 
-- **Terraform** for infrastructure provisioning
-- **Ansible** for server configuration
-- **Docker** for WordPress containerization
-- **Cloudflare** for DNS management
+- ✅ AWS **EC2 Instance** with Docker
+- ✅ AWS **RDS MySQL** database
+- ✅ **Dockerized WordPress**
+- ✅ **Ansible** for automation
+- ✅ **Terraform** for infrastructure as code
+- ✅ **Cloudflare** for domain pointing (subdomain support)
+- ✅ Automatic WordPress installation via **WP-CLI**
 
 ---
 
 ## ✨ Features
-- 🖥️ Automated AWS EC2 Instance Creation  
-- 💾 AWS RDS MySQL Setup  
-- 🔐 Security Group Configuration  
-- 🌐 Cloudflare DNS Setup for Custom Domain  
-- 📦 WordPress Installation via Docker  
-- 🧰 WP-CLI for WordPress Management  
+- AWS account with credentials configured
+- Cloudflare account with API Token & Zone ID
+- Terraform installed (`>= 1.2.0`)
+- Ansible installed
+- SSH key pair (for EC2 access)
+- `.env` file in the root directory
 
 ---
 
@@ -55,6 +58,32 @@ This script:
 - Copies `.env` to the instance
 - Runs the Ansible playbook
 - Deploys WordPress with Docker
+
+## 🔐 .env File Example
+
+Create a `.env` file in the root of the project by copying the example:
+
+```bash
+cp .env.example .env
+# --- Database Configuration (Auto-injected by script) ---
+WORDPRESS_DB_HOST=<RDS Host will be auto-injected>
+WORDPRESS_DB_USER=admin
+WORDPRESS_DB_PASSWORD=adminpassword
+WORDPRESS_DB_NAME=wordpress_db
+
+# --- WordPress Configuration ---
+WORDPRESS_SITE_TITLE=My Awesome Blog
+WORDPRESS_ADMIN_USER=admin
+WORDPRESS_ADMIN_PASSWORD=admin123
+WORDPRESS_ADMIN_EMAIL=admin@example.com
+
+# --- Cloudflare Configuration ---
+CLOUDFLARE_API_TOKEN=your_cloudflare_api_token
+CLOUDFLARE_ZONE_ID=your_cloudflare_zone_id
+SUBDOMAIN=harshal
+ROOT_DOMAIN=purvesh.cloud
+
+
 
 ### 3. Access WordPress
 - Website: [http://harshal.purvesh.cloud](http://ha.purvesrshalh.cloud)
