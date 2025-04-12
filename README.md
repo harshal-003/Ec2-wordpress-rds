@@ -80,8 +80,8 @@ WORDPRESS_ADMIN_EMAIL=admin@example.com
 # --- Cloudflare Configuration ---
 CLOUDFLARE_API_TOKEN=your_cloudflare_api_token
 CLOUDFLARE_ZONE_ID=your_cloudflare_zone_id
-SUBDOMAIN=harshal
-ROOT_DOMAIN=purvesh.cloud
+SUBDOMAIN=
+ROOT_DOMAIN=
 ```
 
 
